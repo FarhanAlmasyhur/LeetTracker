@@ -24,6 +24,10 @@
 		D47BEB03289111A80038D417 /* LevelTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BEB02289111A80038D417 /* LevelTracker.swift */; };
 		D47BEB052891136A0038D417 /* DayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BEB042891136A0038D417 /* DayTracker.swift */; };
 		D47BEB0728919FAF0038D417 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BEB0628919FAF0038D417 /* MainView.swift */; };
+		D4D515802892DDE90073FAA1 /* PostLeetCode.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D5157F2892DDE90073FAA1 /* PostLeetCode.json */; };
+		D4D515822892EB310073FAA1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D515812892EB310073FAA1 /* CoreDataManager.swift */; };
+		D4D515842892F76F0073FAA1 /* StaticDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D515832892F76F0073FAA1 /* StaticDataManager.swift */; };
+		D4D515862892FAF20073FAA1 /* ListProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D515852892FAF20073FAA1 /* ListProblem.swift */; };
 		D4EB25A2288C1FA2000DEBFA /* LeetTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EB25A1288C1FA2000DEBFA /* LeetTrackerApp.swift */; };
 		D4EB25A6288C1FA4000DEBFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EB25A5288C1FA4000DEBFA /* Assets.xcassets */; };
 		D4EB25A9288C1FA4000DEBFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EB25A8288C1FA4000DEBFA /* Preview Assets.xcassets */; };
@@ -50,6 +54,10 @@
 		D47BEB02289111A80038D417 /* LevelTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTracker.swift; sourceTree = "<group>"; };
 		D47BEB042891136A0038D417 /* DayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTracker.swift; sourceTree = "<group>"; };
 		D47BEB0628919FAF0038D417 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D4D5157F2892DDE90073FAA1 /* PostLeetCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PostLeetCode.json; sourceTree = "<group>"; };
+		D4D515812892EB310073FAA1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D4D515832892F76F0073FAA1 /* StaticDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataManager.swift; sourceTree = "<group>"; };
+		D4D515852892FAF20073FAA1 /* ListProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProblem.swift; sourceTree = "<group>"; };
 		D4EB259E288C1FA2000DEBFA /* LeetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EB25A1288C1FA2000DEBFA /* LeetTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetTrackerApp.swift; sourceTree = "<group>"; };
 		D4EB25A5288C1FA4000DEBFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 				D4EB25B5288C2002000DEBFA /* Helper */,
 				D4EB25A1288C1FA2000DEBFA /* LeetTrackerApp.swift */,
 				D47BEB0628919FAF0038D417 /* MainView.swift */,
+				D4D5157F2892DDE90073FAA1 /* PostLeetCode.json */,
 				D4EB25A5288C1FA4000DEBFA /* Assets.xcassets */,
 				D4EB25AA288C1FA4000DEBFA /* Persistence.swift */,
 				D4EB25AC288C1FA4000DEBFA /* LeetTracker.xcdatamodeld */,
@@ -171,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				D43D182C288E4C65009651ED /* NetworkManager.swift */,
+				D4D515812892EB310073FAA1 /* CoreDataManager.swift */,
+				D4D515832892F76F0073FAA1 /* StaticDataManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 			children = (
 				D47BEB002890F48D0038D417 /* MainProblems.swift */,
 				D4534C8D28924B60005C5A81 /* NoProblemView.swift */,
+				D4D515852892FAF20073FAA1 /* ListProblem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4EB25A9288C1FA4000DEBFA /* Preview Assets.xcassets in Resources */,
+				D4D515802892DDE90073FAA1 /* PostLeetCode.json in Resources */,
 				D4EB25A6288C1FA4000DEBFA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D47BEAFD2890EC120038D417 /* AccentButton.swift in Sources */,
+				D4D515862892FAF20073FAA1 /* ListProblem.swift in Sources */,
 				D43D182D288E4C66009651ED /* NetworkManager.swift in Sources */,
 				D4EB25AB288C1FA4000DEBFA /* Persistence.swift in Sources */,
 				D43D1833288E6EFD009651ED /* JSONNull.swift in Sources */,
@@ -324,7 +338,9 @@
 				D47BEB012890F48D0038D417 /* MainProblems.swift in Sources */,
 				D47BEAEF28903FE30038D417 /* TrackerViewModel.swift in Sources */,
 				D4EB25AE288C1FA4000DEBFA /* LeetTracker.xcdatamodeld in Sources */,
+				D4D515822892EB310073FAA1 /* CoreDataManager.swift in Sources */,
 				D4EB25A2288C1FA2000DEBFA /* LeetTrackerApp.swift in Sources */,
+				D4D515842892F76F0073FAA1 /* StaticDataManager.swift in Sources */,
 				D47BEAFB28904CBB0038D417 /* MainUsername.swift in Sources */,
 				D47BEB03289111A80038D417 /* LevelTracker.swift in Sources */,
 				D43D1831288E6EDF009651ED /* ProblemData.swift in Sources */,

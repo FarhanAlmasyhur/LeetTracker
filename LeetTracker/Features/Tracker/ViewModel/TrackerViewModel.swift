@@ -10,7 +10,7 @@ import SwiftUI
 class TrackerViewModel: ObservableObject {
     
     @Published public var username: String = ""
-    @Published public var questions: [Question] = []
+    @MainActor public var questions: [Question] = []
     @Published var level: Levels = Levels.level1
     
     @Published var dayToTrack: Int = 0
@@ -19,6 +19,7 @@ class TrackerViewModel: ObservableObject {
     @Published var levelCondition: Bool = false
     
     private let networkManager: NetworkManager = NetworkManager()
+    private let managedStaticProblem: ManagedStaticProblems = ManagedStaticProblems.sharedProblems
     
     init(){
         for level in levels {
@@ -30,16 +31,23 @@ class TrackerViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Get questions from leetcode
-    private func getQuestions() {
-        guard let problems = networkManager.getProblems() else { return }
+    // MARK: - Get questions from leetcode and save it to CoreData
+    public func getQuestions() {
+        DispatchQueue.main.async {
+            self.networkManager.getProblems { response, error in
+                if error != nil{
+                    print(error?.localizedDescription)
+                } else {
+                    self.questions = response?.data.problemsetQuestionList.questions ?? []
+                    for question in self.questions {
+                        // TODO: CoreData
+                        let staticData = StaticProblem(difficulty: question.difficulty, title: question.title, isCleared: false)
+                        self.managedStaticProblem.addProblems(problem: staticData)
+                    }
+                }
+            }
+        }
         
-        questions = problems.data.problemsetQuestionList.questions
-    }
-    
-    // MARK: - Save the questions array to coredata
-    public func saveQuestions(){
-        getQuestions()
         
     }
     
@@ -61,14 +69,6 @@ class TrackerViewModel: ObservableObject {
         case .level4:
             dayToTrack = 28
         }
-    }
-    
-    func checkActive(level: Levels) -> Bool{
-        if let boolean = levelsActive[level]{
-            levelCondition = boolean
-        }
-        return levelCondition
-        
     }
     
     

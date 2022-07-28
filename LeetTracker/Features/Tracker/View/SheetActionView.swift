@@ -10,6 +10,7 @@ import SwiftUI
 struct SheetActionView: View {
     
     @EnvironmentObject var trackerViewModel: TrackerViewModel
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(alignment: .leading){
@@ -24,7 +25,9 @@ struct SheetActionView: View {
                 .font(.system(size: 18))
                 .padding()
             AccentButton(buttonAction: {
-                print("clicked")
+                trackerViewModel.getQuestions()
+                presentationMode.wrappedValue.dismiss()
+                
             }, buttonText: "I'm Ready")
         }
     }

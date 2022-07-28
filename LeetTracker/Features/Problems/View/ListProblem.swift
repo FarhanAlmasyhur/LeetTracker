@@ -1,38 +1,33 @@
 //
-//  LevelTracker.swift
+//  ListProblem.swift
 //  LeetTracker
 //
-//  Created by Muhammad Farhan Almasyhur on 27/07/22.
+//  Created by Muhammad Farhan Almasyhur on 29/07/22.
 //
 
 import SwiftUI
 
-struct LevelTracker: View {
+struct ListProblem: View {
     
-    @EnvironmentObject var trackerViewModel: TrackerViewModel
-    var level: Levels
-    
-    var isActive: Bool = false
+    @State var problem: StaticProblem = StaticProblem(difficulty: "Easy", title: "Two-Sum", isCleared: false)
     
     var body: some View {
-        Text(level.rawValue)
+        Text(problem.title)
                 .font(.system(size: 16))
                 .multilineTextAlignment(.leading)
                 .frame(width: 270, alignment: .leading)
                 .padding(EdgeInsets(top: 30, leading: 20, bottom: 30, trailing: 20))
                 .background(
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(isActive ? Color.white : Color.gray)
+                        .fill(problem.isCleared ? Color.gray : Color.white)
                         .shadow(color: .gray, radius: 2, x: 0, y: 1.5)
                 )
-                .opacity(isActive ? 1 : 0.5)
-                
+                .opacity(problem.isCleared ? 0.5 : 1)
     }
 }
 
-struct LevelTracker_Previews: PreviewProvider {
+struct ListProblem_Previews: PreviewProvider {
     static var previews: some View {
-        LevelTracker(level: .level1)
-            .environmentObject(TrackerViewModel())
+        ListProblem()
     }
 }

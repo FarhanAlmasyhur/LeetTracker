@@ -37,10 +37,15 @@ struct MainTracker: View {
                     .padding(.top)
                 Text("Start your challenges from level 1")
                 ForEach(trackerViewModel.levels, id: \.id){ level in
-                    LevelTracker(level: level, isActive: trackerViewModel.checkActive(level: level))
+                    LevelTracker(level: level, isActive: trackerViewModel.levelsActive[level] ?? false)
+                    
                         .onTapGesture {
-                            showingSheets.toggle()
-                            trackerViewModel.stringLevelProblems(levelTapped: level)
+                            
+                            if trackerViewModel.levelsActive[level] == true{
+                                showingSheets.toggle()
+                                trackerViewModel.stringLevelProblems(levelTapped: level)
+                            }
+                            
                         }
                         .sheet(isPresented: $showingSheets) {
                             SheetActionView()

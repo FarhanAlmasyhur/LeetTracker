@@ -15,7 +15,6 @@ class UsernameViewModel: ObservableObject{
     public func changeUsername(with newUsername: String){
         username = newUsername
         UserDefaults.standard.set(username, forKey: "username")
-        print(username)
     }
     
     public func getUsername() -> String {

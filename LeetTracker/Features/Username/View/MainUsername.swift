@@ -12,6 +12,8 @@ struct MainUsername: View {
     private let usernameViewModel = UsernameViewModel()
     @State var username: String = ""
     @State var goToMainView = false
+    @StateObject var trackerViewModel = TrackerViewModel()
+    @StateObject var problemViewModel = ProblemViewModel()
     
     var body: some View {
         NavigationView {
@@ -30,6 +32,8 @@ struct MainUsername: View {
                     }
                     NavigationLink("", isActive: $goToMainView) {
                         MainView()
+                            .environmentObject(trackerViewModel)
+                            .environmentObject(problemViewModel)
                     }
                 }
                 

@@ -21,8 +21,8 @@ class NetworkManager{
 //            .eraseToAnyPublisher()
 //    }
     
-    func getProblems() -> ProblemData? {
-        guard let url = URL(string: "https://leetcode.com/graphql") else { return nil }
+    func getProblems(withCompletion completion: @escaping (ProblemData?, Error?) -> Void) {
+        guard let url = URL(string: "https://leetcode.com/graphql") else { return  }
         
         //Method, body, and headers
         var request = URLRequest(url: url)
@@ -33,18 +33,19 @@ class NetworkManager{
         //make request
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
+                completion(nil, error)
                 return
             }
             do {
                 let response = try JSONDecoder().decode(ProblemData.self, from: data)
                 self.problemData = response
-                
+                completion(response,nil)
             } catch {
                 print(error.localizedDescription)
+                completion(nil, error)
             }
         }
         task.resume()
-        return problemData
     }
     
 }
