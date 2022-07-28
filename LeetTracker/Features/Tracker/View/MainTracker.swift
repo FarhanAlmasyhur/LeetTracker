@@ -22,7 +22,7 @@ enum Levels: String, CaseIterable, Identifiable {
 struct MainTracker: View {
     
     @EnvironmentObject var trackerViewModel: TrackerViewModel
-    
+    @State private var showingSheets = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -36,6 +36,16 @@ struct MainTracker: View {
                     .bold()
                     .padding(.top)
                 Text("Start your challenges from level 1")
+                ForEach(trackerViewModel.levels, id: \.id){ level in
+                    LevelTracker(level: level, isActive: trackerViewModel.checkActive(level: level))
+                        .onTapGesture {
+                            showingSheets.toggle()
+                            trackerViewModel.stringLevelProblems(levelTapped: level)
+                        }
+                        .sheet(isPresented: $showingSheets) {
+                            SheetActionView()
+                        }
+                }
                 
             }
         }   .frame(maxWidth: .infinity)

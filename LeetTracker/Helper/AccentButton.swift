@@ -10,11 +10,11 @@ import SwiftUI
 struct AccentButton: View {
     
     let buttonAction: (() -> Void)
-    
+    var buttonText: String = "Continue"
     
     var body: some View {
         Button(action: buttonAction, label: {
-            Text("Continue")
+            Text(buttonText)
                 .bold()
                 .foregroundColor(.white)
                 .frame(minWidth: 0, maxWidth: .infinity)
