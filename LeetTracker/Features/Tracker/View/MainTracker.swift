@@ -7,38 +7,47 @@
 
 import SwiftUI
 
+enum Levels: String, CaseIterable, Identifiable {
+    
+    var id: String {
+        UUID().uuidString
+    }
+    
+    case level1 = "Level 1"
+    case level2 = "Level 2"
+    case level3 = "Level 3"
+    case level4 = "Level 4"
+}
+
 struct MainTracker: View {
     
-    private let trackerViewModel = TrackerViewModel()
+    var trackerViewModel: TrackerViewModel = TrackerViewModel()
+    
     
     var body: some View {
-        VStack() {
-            Text("Hello, \(trackerViewModel.getUsername())!")
-                .multilineTextAlignment(.leading)
-            VStack{
-                Text("3")
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                Text("Hello, \(trackerViewModel.getUsername())!")
                     .bold()
-                    .foregroundColor(.orange)
-                    .font(.system(size: 72))
-                Text("DAY STREAK")
+                    .multilineTextAlignment(.leading)
+                    .padding(10)
+                DayTracker()
+                Text("Challenges")
                     .bold()
-                    .font(.system(size: 28))
-            }   .frame(width: 250, height: 250, alignment: .center)
-                .padding()
-                .fixedSize()
-                .background(
-                    RoundedRectangle(cornerRadius: 28)
-                        .fill(Color.white)
-                        .shadow(radius: 3)
-                        
-                )
-            Spacer()
-        }.padding()
+                    .padding(.top)
+                Text("Start your challenges from level 1")
+                
+            }
+        }   .frame(maxWidth: .infinity)
+            .edgesIgnoringSafeArea(.horizontal)
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
 }
 
 struct MainTracker_Previews: PreviewProvider {
     static var previews: some View {
         MainTracker()
+//            .environmentObject(TrackerViewModel())
     }
 }

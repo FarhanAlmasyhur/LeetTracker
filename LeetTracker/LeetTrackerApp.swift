@@ -17,16 +17,8 @@ struct LeetTrackerApp: App {
             if !usernameViewModel.checkUsername(){
                 MainUsername()
             } else {
-                TabView{
-                    MainTracker()
-                        .tabItem {
-                            Label("Track", systemImage: "keyboard")
-                        }
-                    MainProblems()
-                        .tabItem{
-                            Label("Problems", systemImage: "brain")
-                        }
-                }.accentColor(.orange)
+                MainView()
+                    .tabViewStyle(.automatic)
             }
         }
     }

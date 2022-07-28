@@ -11,17 +11,21 @@ class TrackerViewModel: ObservableObject {
     
     @Published public var username: String = ""
     @Published public var questions: [Question] = []
+    @Published var level: Levels = Levels.level1
+    
+    
     private let networkManager: NetworkManager = NetworkManager()
     
     // MARK: - Get questions from leetcode
-    func getQuestions() {
+    private func getQuestions() {
         guard let problems = networkManager.getProblems() else { return }
         
         questions = problems.data.problemsetQuestionList.questions
     }
     
     // MARK: - Save the questions array to coredata
-    func saveQuestions(){
+    public func saveQuestions(){
+        getQuestions()
         
     }
     

@@ -11,6 +11,7 @@ struct MainUsername: View {
     
     private let usernameViewModel = UsernameViewModel()
     @State var username: String = ""
+    @State var goToMainView = false
     
     var body: some View {
         NavigationView {
@@ -22,11 +23,16 @@ struct MainUsername: View {
                         .textFieldStyle(.roundedBorder)
                     
                 }.padding(.all)
-                NavigationLink(destination: MainUsername()) {
+                VStack{
                     AccentButton{
                         usernameViewModel.changeUsername(with: username)
+                        goToMainView = true
+                    }
+                    NavigationLink("", isActive: $goToMainView) {
+                        MainView()
                     }
                 }
+                
             }
         }
     }
