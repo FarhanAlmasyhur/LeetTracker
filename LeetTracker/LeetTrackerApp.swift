@@ -11,6 +11,8 @@ import SwiftUI
 struct LeetTrackerApp: App {
 //    let persistenceController = PersistenceController.shared
     private let usernameViewModel = UsernameViewModel()
+    @StateObject var trackerViewModel = TrackerViewModel()
+    @StateObject var problemViewModel = ProblemViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -18,7 +20,8 @@ struct LeetTrackerApp: App {
                 MainUsername()
             } else {
                 MainView()
-                    .tabViewStyle(.automatic)
+                    .environmentObject(trackerViewModel)
+                    .environmentObject(problemViewModel)
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ProblemViewModel {
+class ProblemViewModel: ObservableObject {
     
     @Published public var questions: [Question] = []
     

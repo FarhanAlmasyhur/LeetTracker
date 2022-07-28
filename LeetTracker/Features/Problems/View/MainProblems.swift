@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct MainProblems: View {
+    @EnvironmentObject var problemViewModel: ProblemViewModel
+    
     var body: some View {
-        Text("Problems View")
+        if problemViewModel.questions.count == 0{
+            NoProblemView()
+        } else {
+            NoProblemView()
+        }
     }
 }
 
 struct MainProblems_Previews: PreviewProvider {
     static var previews: some View {
         MainProblems()
+            .environmentObject(ProblemViewModel())
     }
 }

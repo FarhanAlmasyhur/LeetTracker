@@ -2,9 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Problem" representedClassName="Problem" syncable="YES">
         <attribute name="difficulty" optional="YES" attributeType="String"/>
+        <attribute name="isCleared" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Problem" positionX="-63" positionY="-9" width="128" height="59"/>
+        <element name="Problem" positionX="-63" positionY="-9" width="128" height="74"/>
     </elements>
 </model>

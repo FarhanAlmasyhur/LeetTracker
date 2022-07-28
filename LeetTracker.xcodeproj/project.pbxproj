@@ -10,6 +10,9 @@
 		D43D182D288E4C66009651ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43D182C288E4C65009651ED /* NetworkManager.swift */; };
 		D43D1831288E6EDF009651ED /* ProblemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43D1830288E6EDF009651ED /* ProblemData.swift */; };
 		D43D1833288E6EFD009651ED /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43D1832288E6EFD009651ED /* JSONNull.swift */; };
+		D4534C8B28922400005C5A81 /* Problem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4534C8928922400005C5A81 /* Problem+CoreDataClass.swift */; };
+		D4534C8C28922400005C5A81 /* Problem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4534C8A28922400005C5A81 /* Problem+CoreDataProperties.swift */; };
+		D4534C8E28924B60005C5A81 /* NoProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4534C8D28924B60005C5A81 /* NoProblemView.swift */; };
 		D47BEAED289036AE0038D417 /* LoadJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BEAEC289036AE0038D417 /* LoadJSON.swift */; };
 		D47BEAEF28903FE30038D417 /* TrackerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BEAEE28903FE30038D417 /* TrackerViewModel.swift */; };
 		D47BEAF5289044740038D417 /* ProblemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47BEAF4289044740038D417 /* ProblemViewModel.swift */; };
@@ -32,6 +35,9 @@
 		D43D182C288E4C65009651ED /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D43D1830288E6EDF009651ED /* ProblemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemData.swift; sourceTree = "<group>"; };
 		D43D1832288E6EFD009651ED /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
+		D4534C8928922400005C5A81 /* Problem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Problem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D4534C8A28922400005C5A81 /* Problem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Problem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D4534C8D28924B60005C5A81 /* NoProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoProblemView.swift; sourceTree = "<group>"; };
 		D47BEAEC289036AE0038D417 /* LoadJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJSON.swift; sourceTree = "<group>"; };
 		D47BEAEE28903FE30038D417 /* TrackerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewModel.swift; sourceTree = "<group>"; };
 		D47BEAF4289044740038D417 /* ProblemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 		D47BEAF32890424E0038D417 /* SharedModel */ = {
 			isa = PBXGroup;
 			children = (
+				D4534C8928922400005C5A81 /* Problem+CoreDataClass.swift */,
+				D4534C8A28922400005C5A81 /* Problem+CoreDataProperties.swift */,
 				D43D1830288E6EDF009651ED /* ProblemData.swift */,
 			);
 			path = SharedModel;
@@ -220,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				D47BEB002890F48D0038D417 /* MainProblems.swift */,
+				D4534C8D28924B60005C5A81 /* NoProblemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,7 +326,10 @@
 				D43D1831288E6EDF009651ED /* ProblemData.swift in Sources */,
 				D47BEAF5289044740038D417 /* ProblemViewModel.swift in Sources */,
 				D47BEAFF2890F2110038D417 /* MainTracker.swift in Sources */,
+				D4534C8E28924B60005C5A81 /* NoProblemView.swift in Sources */,
+				D4534C8B28922400005C5A81 /* Problem+CoreDataClass.swift in Sources */,
 				D47BEAED289036AE0038D417 /* LoadJSON.swift in Sources */,
+				D4534C8C28922400005C5A81 /* Problem+CoreDataProperties.swift in Sources */,
 				D47BEB052891136A0038D417 /* DayTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

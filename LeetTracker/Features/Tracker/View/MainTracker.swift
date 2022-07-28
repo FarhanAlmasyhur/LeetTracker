@@ -21,13 +21,13 @@ enum Levels: String, CaseIterable, Identifiable {
 
 struct MainTracker: View {
     
-    var trackerViewModel: TrackerViewModel = TrackerViewModel()
+    @EnvironmentObject var trackerViewModel: TrackerViewModel
     
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                Text("Hello, \(trackerViewModel.getUsername())!")
+                Text("Hello, \(trackerViewModel.username)!")
                     .bold()
                     .multilineTextAlignment(.leading)
                     .padding(10)
@@ -42,12 +42,15 @@ struct MainTracker: View {
             .edgesIgnoringSafeArea(.horizontal)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
+            .onAppear {
+                trackerViewModel.getUsername()
+            }
     }
 }
 
 struct MainTracker_Previews: PreviewProvider {
     static var previews: some View {
         MainTracker()
-//            .environmentObject(TrackerViewModel())
+            .environmentObject(TrackerViewModel())
     }
 }

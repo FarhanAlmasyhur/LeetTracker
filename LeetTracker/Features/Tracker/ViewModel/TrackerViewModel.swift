@@ -12,7 +12,7 @@ class TrackerViewModel: ObservableObject {
     @Published public var username: String = ""
     @Published public var questions: [Question] = []
     @Published var level: Levels = Levels.level1
-    
+    @Published var levelCondition: [Levels: [Problem]] = [:]
     
     private let networkManager: NetworkManager = NetworkManager()
     
@@ -30,9 +30,8 @@ class TrackerViewModel: ObservableObject {
     }
     
     // MARK: - Get Username
-    func getUsername() -> String{
+    public func getUsername(){
         username = UserDefaults.standard.string(forKey: "username") ?? ""
-        return username
     }
     
     
