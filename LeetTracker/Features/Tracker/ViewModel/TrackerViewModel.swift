@@ -17,6 +17,7 @@ class TrackerViewModel: ObservableObject {
     @Published var levels: [Levels] = Levels.allCases
     @Published var levelsActive: [Levels:Bool] = [:]
     @Published var levelCondition: Bool = false
+    @Published var daysStreak: Int = 0
     
     private let networkManager: NetworkManager = NetworkManager()
     private let managedStaticProblem: ManagedStaticProblems = ManagedStaticProblems.sharedProblems
@@ -31,12 +32,17 @@ class TrackerViewModel: ObservableObject {
         }
     }
     
+    // MARK: - Check Streak
+    public func checkStreak() {
+        daysStreak = StreakCounter.checkForStreak()
+    }
+    
     // MARK: - Get questions from leetcode and save it to CoreData
     public func getQuestions() {
         DispatchQueue.main.async {
             self.networkManager.getProblems { response, error in
-                if error != nil{
-                    print(error?.localizedDescription)
+                if let error = error{
+                    print(error.localizedDescription)
                 } else {
                     self.questions = response?.data.problemsetQuestionList.questions ?? []
                     for question in self.questions {

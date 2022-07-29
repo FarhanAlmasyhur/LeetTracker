@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct DayTracker: View {
+    @EnvironmentObject var trackerViewModel: TrackerViewModel
     var body: some View {
         VStack{
-            Text("3")
+            Text(String(trackerViewModel.daysStreak))
                 .bold()
                 .foregroundColor(.orange)
                 .font(.system(size: 72))

@@ -59,6 +59,7 @@ struct MainTracker: View {
             .navigationBarBackButtonHidden(true)
             .onAppear {
                 trackerViewModel.getUsername()
+                trackerViewModel.checkStreak()
             }
     }
 }

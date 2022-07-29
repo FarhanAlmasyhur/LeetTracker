@@ -28,6 +28,8 @@
 		D4D515822892EB310073FAA1 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D515812892EB310073FAA1 /* CoreDataManager.swift */; };
 		D4D515842892F76F0073FAA1 /* StaticDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D515832892F76F0073FAA1 /* StaticDataManager.swift */; };
 		D4D515862892FAF20073FAA1 /* ListProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D515852892FAF20073FAA1 /* ListProblem.swift */; };
+		D4D51588289381F10073FAA1 /* StreakCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D51587289381F10073FAA1 /* StreakCounter.swift */; };
+		D4D5158B2893AD5E0073FAA1 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D5158A2893AD5E0073FAA1 /* NotificationCenter.swift */; };
 		D4EB25A2288C1FA2000DEBFA /* LeetTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EB25A1288C1FA2000DEBFA /* LeetTrackerApp.swift */; };
 		D4EB25A6288C1FA4000DEBFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EB25A5288C1FA4000DEBFA /* Assets.xcassets */; };
 		D4EB25A9288C1FA4000DEBFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EB25A8288C1FA4000DEBFA /* Preview Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		D4D515812892EB310073FAA1 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D4D515832892F76F0073FAA1 /* StaticDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataManager.swift; sourceTree = "<group>"; };
 		D4D515852892FAF20073FAA1 /* ListProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProblem.swift; sourceTree = "<group>"; };
+		D4D51587289381F10073FAA1 /* StreakCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCounter.swift; sourceTree = "<group>"; };
+		D4D5158A2893AD5E0073FAA1 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		D4EB259E288C1FA2000DEBFA /* LeetTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeetTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EB25A1288C1FA2000DEBFA /* LeetTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetTrackerApp.swift; sourceTree = "<group>"; };
 		D4EB25A5288C1FA4000DEBFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,16 @@
 				D43D1830288E6EDF009651ED /* ProblemData.swift */,
 			);
 			path = SharedModel;
+			sourceTree = "<group>";
+		};
+		D4D515892893AD4C0073FAA1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D43D182C288E4C65009651ED /* NetworkManager.swift */,
+				D4D515812892EB310073FAA1 /* CoreDataManager.swift */,
+				D4D515832892F76F0073FAA1 /* StaticDataManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		D4EB2595288C1FA2000DEBFA = {
@@ -179,9 +193,9 @@
 		D4EB25B6288C2021000DEBFA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D43D182C288E4C65009651ED /* NetworkManager.swift */,
-				D4D515812892EB310073FAA1 /* CoreDataManager.swift */,
-				D4D515832892F76F0073FAA1 /* StaticDataManager.swift */,
+				D4D515892893AD4C0073FAA1 /* Manager */,
+				D4D51587289381F10073FAA1 /* StreakCounter.swift */,
+				D4D5158A2893AD5E0073FAA1 /* NotificationCenter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -336,6 +350,7 @@
 				D4534C9028926541005C5A81 /* SheetActionView.swift in Sources */,
 				D47BEB0728919FAF0038D417 /* MainView.swift in Sources */,
 				D47BEB012890F48D0038D417 /* MainProblems.swift in Sources */,
+				D4D5158B2893AD5E0073FAA1 /* NotificationCenter.swift in Sources */,
 				D47BEAEF28903FE30038D417 /* TrackerViewModel.swift in Sources */,
 				D4EB25AE288C1FA4000DEBFA /* LeetTracker.xcdatamodeld in Sources */,
 				D4D515822892EB310073FAA1 /* CoreDataManager.swift in Sources */,
@@ -344,6 +359,7 @@
 				D47BEAFB28904CBB0038D417 /* MainUsername.swift in Sources */,
 				D47BEB03289111A80038D417 /* LevelTracker.swift in Sources */,
 				D43D1831288E6EDF009651ED /* ProblemData.swift in Sources */,
+				D4D51588289381F10073FAA1 /* StreakCounter.swift in Sources */,
 				D47BEAF5289044740038D417 /* ProblemViewModel.swift in Sources */,
 				D47BEAFF2890F2110038D417 /* MainTracker.swift in Sources */,
 				D4534C8E28924B60005C5A81 /* NoProblemView.swift in Sources */,

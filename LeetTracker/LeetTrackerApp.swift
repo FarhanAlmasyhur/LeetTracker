@@ -14,6 +14,15 @@ struct LeetTrackerApp: App {
     @StateObject var trackerViewModel = TrackerViewModel()
     @StateObject var problemViewModel = ProblemViewModel()
 
+    init(){
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert,.sound,.badge]) { result, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            }
+            
+        }
+    }
     var body: some Scene {
         WindowGroup {
             if !usernameViewModel.checkUsername(){

@@ -9,9 +9,12 @@ import SwiftUI
 
 class ProblemViewModel: ObservableObject {
     
-    @ObservedObject public var staticProblems = ManagedStaticProblems.sharedProblems
+    @Published public var staticProblems: [StaticProblem] = []
     
     //TODO: Get Problem from CoreData
     
+    func getStaticProblems(){
+        staticProblems = ManagedStaticProblems.sharedProblems.getProblems()
+    }
     
 }

@@ -24,8 +24,6 @@ struct MainView: View {
                 }
                 .tag(2)
         }   .accentColor(.orange)
-//            .environmentObject(trackerViewModel)
-//            .environmentObject(problemViewModel)
     }
 }
 

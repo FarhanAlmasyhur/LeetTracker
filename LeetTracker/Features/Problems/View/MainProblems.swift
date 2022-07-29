@@ -11,10 +11,10 @@ struct MainProblems: View {
     @EnvironmentObject var problemViewModel: ProblemViewModel
     
     var body: some View {
-        if problemViewModel.staticProblems.problems.count == 0{
+        if problemViewModel.staticProblems.count == 0{
             NoProblemView()
         } else {
-            ForEach(problemViewModel.staticProblems.problems){ problem in
+            ForEach(problemViewModel.staticProblems){ problem in
                 ListProblem(problem: problem)
                 
             }

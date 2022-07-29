@@ -3,7 +3,7 @@
     "variables": {
         "categorySlug": "",
         "skip": 0,
-        "limit": 5,
+        "limit": 7,
         "filters":{
             "difficulty":"EASY",
             "premiumOnly":false
